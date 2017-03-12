@@ -15,7 +15,7 @@
 		1A8884621E7523C000D97EA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A8884601E7523C000D97EA4 /* LaunchScreen.storyboard */; };
 		1A88846D1E7523C100D97EA4 /* JMQRCodeDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A88846C1E7523C100D97EA4 /* JMQRCodeDemoTests.m */; };
 		1A8884781E7523C100D97EA4 /* JMQRCodeDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8884771E7523C100D97EA4 /* JMQRCodeDemoUITests.m */; };
-		1A8884881E75248900D97EA4 /* JMGenerateQRCodeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8884871E75248900D97EA4 /* JMGenerateQRCodeUtils.m */; };
+		1A8884E91E75AA2600D97EA4 /* JMGenerateQRCodeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8884E81E75AA2600D97EA4 /* JMGenerateQRCodeUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,9 +52,9 @@
 		1A8884731E7523C100D97EA4 /* JMQRCodeDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JMQRCodeDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A8884771E7523C100D97EA4 /* JMQRCodeDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JMQRCodeDemoUITests.m; sourceTree = "<group>"; };
 		1A8884791E7523C100D97EA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1A8884861E75248900D97EA4 /* JMGenerateQRCodeUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMGenerateQRCodeUtils.h; sourceTree = "<group>"; };
-		1A8884871E75248900D97EA4 /* JMGenerateQRCodeUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMGenerateQRCodeUtils.m; sourceTree = "<group>"; };
 		1A88848D1E752A7300D97EA4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1A8884E71E75AA2600D97EA4 /* JMGenerateQRCodeUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMGenerateQRCodeUtils.h; sourceTree = "<group>"; };
+		1A8884E81E75AA2600D97EA4 /* JMGenerateQRCodeUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMGenerateQRCodeUtils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +106,7 @@
 		1A8884511E7523C000D97EA4 /* JMQRCodeDemo */ = {
 			isa = PBXGroup;
 			children = (
-				1A8884851E7523D900D97EA4 /* JMQRCode */,
+				1A8884E61E75AA2600D97EA4 /* JMQRCode */,
 				1A8884551E7523C000D97EA4 /* AppDelegate.h */,
 				1A8884561E7523C000D97EA4 /* AppDelegate.m */,
 				1A8884581E7523C000D97EA4 /* ViewController.h */,
@@ -146,21 +146,21 @@
 			path = JMQRCodeDemoUITests;
 			sourceTree = "<group>";
 		};
-		1A8884851E7523D900D97EA4 /* JMQRCode */ = {
-			isa = PBXGroup;
-			children = (
-				1A8884861E75248900D97EA4 /* JMGenerateQRCodeUtils.h */,
-				1A8884871E75248900D97EA4 /* JMGenerateQRCodeUtils.m */,
-			);
-			name = JMQRCode;
-			sourceTree = "<group>";
-		};
 		1A88848C1E752A7300D97EA4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				1A88848D1E752A7300D97EA4 /* UIKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1A8884E61E75AA2600D97EA4 /* JMQRCode */ = {
+			isa = PBXGroup;
+			children = (
+				1A8884E71E75AA2600D97EA4 /* JMGenerateQRCodeUtils.h */,
+				1A8884E81E75AA2600D97EA4 /* JMGenerateQRCodeUtils.m */,
+			);
+			path = JMQRCode;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,8 +299,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A8884E91E75AA2600D97EA4 /* JMGenerateQRCodeUtils.m in Sources */,
 				1A88845A1E7523C000D97EA4 /* ViewController.m in Sources */,
-				1A8884881E75248900D97EA4 /* JMGenerateQRCodeUtils.m in Sources */,
 				1A8884571E7523C000D97EA4 /* AppDelegate.m in Sources */,
 				1A8884541E7523C000D97EA4 /* main.m in Sources */,
 			);
@@ -540,6 +540,7 @@
 				1A88847E1E7523C100D97EA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1A88847F1E7523C100D97EA4 /* Build configuration list for PBXNativeTarget "JMQRCodeDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -548,6 +549,7 @@
 				1A8884811E7523C100D97EA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1A8884821E7523C100D97EA4 /* Build configuration list for PBXNativeTarget "JMQRCodeDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -556,6 +558,7 @@
 				1A8884841E7523C100D97EA4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
