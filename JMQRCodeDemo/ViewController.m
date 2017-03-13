@@ -7,7 +7,9 @@
 //
 
 #import "ViewController.h"
-#import "JMGenerateQRCodeUtils.h"
+#import "JMGenerateQRCodeViewController.h"
+#import "JMScanningQRCodeViewController.h"
+#import "JMScanningQRCodeUtils.h"
 
 @interface ViewController ()
 
@@ -18,62 +20,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [self generateQRCode];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Private
-- (void)generateQRCode {
-    CGSize size         = CGSizeMake(120, 120);
-    float  off          = 30;
-    NSString *string    = @"https://github.com/xiaobs/JMQRCode.git";
-    NSString *logoName  = @"logo";
-    CGSize logoSize     = CGSizeMake(30, 30);
+#pragma mark - UI
+- (void)setupViews {
+    
+}
 
-    float tempX         = (self.view.bounds.size.width - size.width * 2 - off) / 2;
-    for (int i = 0; i < 4; i++) {
-        float originX  = tempX;
-        float originY  = 80;
-        UIImage *image = nil;
+- (IBAction)generateQRCode:(id)sender {
+    [self.navigationController pushViewController:[[JMGenerateQRCodeViewController alloc] init] animated:true];
+}
 
-        switch (i) {
-            case 0:
-            {
-                image = [JMGenerateQRCodeUtils jm_generateQRCodeWithString:string imageSize:size];
-            }
-                break;
-            case 1:
-            {
-                image = [JMGenerateQRCodeUtils jm_generateQRCodeWithString:string imageSize:size logoImageName:logoName logoImageSize:logoSize];
-                originX += size.width + off;
-            }
-                break;
-            case 2:
-            {
-                image = [JMGenerateQRCodeUtils jm_generateColorQRCodeWithString:string imageSize:size rgbColor:[CIColor colorWithRed:200.0/255.0 green:70.0/255.0 blue:189.0/255.0] backgroundColor:[CIColor colorWithRed:1 green:1 blue:1]];
-                originY += size.height + off;
-            }
-                break;
-            case 3:
-            {
-                image = [JMGenerateQRCodeUtils jm_generateColorQRCodeWithString:string imageSize:size rgbColor:[CIColor colorWithRed:200.0/255.0 green:70.0/255.0 blue:189.0/255.0] backgroundColor:[CIColor colorWithRed:1 green:1 blue:1] logoImageName:logoName logoImageSize:logoSize];
-                originX += size.width + off;
-                originY += size.height + off;
-            }
-                break;
-            default:
-                break;
-        }
+- (IBAction)scanQRCode:(id)sender {
+    [JMScanningQRCodeUtils jm_cameraAuthStatusWithSuccess:^{
+        [self.navigationController pushViewController:[[JMScanningQRCodeViewController alloc] init] animated:true];
+    } failure:^{
         
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(originX, originY, size.width, size.height)];
-        imageView.image = image;
-        [self.view addSubview:imageView];
-    }
+    }];
 }
 
 @end

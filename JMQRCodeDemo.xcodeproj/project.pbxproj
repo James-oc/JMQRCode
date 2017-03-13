@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A145E991E76350F00D532A3 /* JMScanningQRCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A145E981E76350F00D532A3 /* JMScanningQRCodeView.m */; };
+		1A145EA01E76500F00D532A3 /* JMGenerateQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A145E9F1E76500F00D532A3 /* JMGenerateQRCodeViewController.m */; };
+		1A145EA31E76527100D532A3 /* JMScanningQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A145EA21E76527100D532A3 /* JMScanningQRCodeViewController.m */; };
+		1A145EA61E766B1800D532A3 /* JMScanningResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A145EA51E766B1800D532A3 /* JMScanningResultViewController.m */; };
+		1A145EAB1E7675CD00D532A3 /* JMScanningQRCodeUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A145EAA1E7675CD00D532A3 /* JMScanningQRCodeUtils.m */; };
 		1A8884541E7523C000D97EA4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8884531E7523C000D97EA4 /* main.m */; };
 		1A8884571E7523C000D97EA4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8884561E7523C000D97EA4 /* AppDelegate.m */; };
 		1A88845A1E7523C000D97EA4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A8884591E7523C000D97EA4 /* ViewController.m */; };
@@ -36,6 +41,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A145E971E76350F00D532A3 /* JMScanningQRCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMScanningQRCodeView.h; sourceTree = "<group>"; };
+		1A145E981E76350F00D532A3 /* JMScanningQRCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMScanningQRCodeView.m; sourceTree = "<group>"; };
+		1A145E9E1E76500F00D532A3 /* JMGenerateQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMGenerateQRCodeViewController.h; sourceTree = "<group>"; };
+		1A145E9F1E76500F00D532A3 /* JMGenerateQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMGenerateQRCodeViewController.m; sourceTree = "<group>"; };
+		1A145EA11E76527100D532A3 /* JMScanningQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMScanningQRCodeViewController.h; sourceTree = "<group>"; };
+		1A145EA21E76527100D532A3 /* JMScanningQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMScanningQRCodeViewController.m; sourceTree = "<group>"; };
+		1A145EA41E766B1800D532A3 /* JMScanningResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMScanningResultViewController.h; sourceTree = "<group>"; };
+		1A145EA51E766B1800D532A3 /* JMScanningResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMScanningResultViewController.m; sourceTree = "<group>"; };
+		1A145EA91E7675CD00D532A3 /* JMScanningQRCodeUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMScanningQRCodeUtils.h; sourceTree = "<group>"; };
+		1A145EAA1E7675CD00D532A3 /* JMScanningQRCodeUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMScanningQRCodeUtils.m; sourceTree = "<group>"; };
 		1A88844F1E7523C000D97EA4 /* JMQRCodeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JMQRCodeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A8884531E7523C000D97EA4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1A8884551E7523C000D97EA4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -111,6 +126,12 @@
 				1A8884561E7523C000D97EA4 /* AppDelegate.m */,
 				1A8884581E7523C000D97EA4 /* ViewController.h */,
 				1A8884591E7523C000D97EA4 /* ViewController.m */,
+				1A145E9E1E76500F00D532A3 /* JMGenerateQRCodeViewController.h */,
+				1A145E9F1E76500F00D532A3 /* JMGenerateQRCodeViewController.m */,
+				1A145EA11E76527100D532A3 /* JMScanningQRCodeViewController.h */,
+				1A145EA21E76527100D532A3 /* JMScanningQRCodeViewController.m */,
+				1A145EA41E766B1800D532A3 /* JMScanningResultViewController.h */,
+				1A145EA51E766B1800D532A3 /* JMScanningResultViewController.m */,
 				1A88845B1E7523C000D97EA4 /* Main.storyboard */,
 				1A88845E1E7523C000D97EA4 /* Assets.xcassets */,
 				1A8884601E7523C000D97EA4 /* LaunchScreen.storyboard */,
@@ -159,6 +180,10 @@
 			children = (
 				1A8884E71E75AA2600D97EA4 /* JMGenerateQRCodeUtils.h */,
 				1A8884E81E75AA2600D97EA4 /* JMGenerateQRCodeUtils.m */,
+				1A145E971E76350F00D532A3 /* JMScanningQRCodeView.h */,
+				1A145E981E76350F00D532A3 /* JMScanningQRCodeView.m */,
+				1A145EA91E7675CD00D532A3 /* JMScanningQRCodeUtils.h */,
+				1A145EAA1E7675CD00D532A3 /* JMScanningQRCodeUtils.m */,
 			);
 			path = JMQRCode;
 			sourceTree = "<group>";
@@ -301,8 +326,13 @@
 			files = (
 				1A8884E91E75AA2600D97EA4 /* JMGenerateQRCodeUtils.m in Sources */,
 				1A88845A1E7523C000D97EA4 /* ViewController.m in Sources */,
+				1A145EA61E766B1800D532A3 /* JMScanningResultViewController.m in Sources */,
+				1A145E991E76350F00D532A3 /* JMScanningQRCodeView.m in Sources */,
 				1A8884571E7523C000D97EA4 /* AppDelegate.m in Sources */,
+				1A145EA01E76500F00D532A3 /* JMGenerateQRCodeViewController.m in Sources */,
 				1A8884541E7523C000D97EA4 /* main.m in Sources */,
+				1A145EAB1E7675CD00D532A3 /* JMScanningQRCodeUtils.m in Sources */,
+				1A145EA31E76527100D532A3 /* JMScanningQRCodeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,8 +483,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 58SDKF7S9Q;
 				INFOPLIST_FILE = JMQRCodeDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hgy.test.JMQRCodeDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hgy.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -465,8 +496,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 58SDKF7S9Q;
 				INFOPLIST_FILE = JMQRCodeDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hgy.test.JMQRCodeDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hgy.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
