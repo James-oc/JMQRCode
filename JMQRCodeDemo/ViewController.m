@@ -7,8 +7,8 @@
 //
 
 #import "ViewController.h"
-#import "JMGenerateQRCodeViewController.h"
-#import "JMScanningQRCodeViewController.h"
+#import "JMGenerateQRCodeVC.h"
+#import "JMScanningQRCodeVC.h"
 #import "JMScanningQRCodeUtils.h"
 
 @interface ViewController ()
@@ -33,12 +33,12 @@
 }
 
 - (IBAction)generateQRCode:(id)sender {
-    [self.navigationController pushViewController:[[JMGenerateQRCodeViewController alloc] init] animated:true];
+    [self.navigationController pushViewController:[[JMGenerateQRCodeVC alloc] init] animated:true];
 }
 
 - (IBAction)scanQRCode:(id)sender {
     [JMScanningQRCodeUtils jm_cameraAuthStatusWithSuccess:^{
-        [self.navigationController pushViewController:[[JMScanningQRCodeViewController alloc] init] animated:true];
+        [self.navigationController pushViewController:[[JMScanningQRCodeVC alloc] init] animated:true];
     } failure:^{
         
     }];

@@ -27,7 +27,7 @@ typedef void (^JMScanningQRCodeResult)  (NSString *result);
 @property (nonatomic,strong ) NSString           *qrLineImageName;// 默认@""
 @property (nonatomic,strong ) UIColor            *qrLineColor;// 默认[UIColor clearColor]
 @property (nonatomic, assign) CGSize             qrLineSize;// 默认宽度等于transparentArea宽度减去20，高度2
-@property (nonatomic, assign) float              qrLineAnimateDuration;// 线条动画频率,默认0.01
+@property (nonatomic, assign) float              qrLineAnimateDuration;// 线条动画频率,默认0.006
 
 /** 四个角 */
 @property (nonatomic, assign) float              cornerLineLength;// 边角线条长度，默认15

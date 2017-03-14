@@ -6,14 +6,14 @@
 //  Copyright © 2017年 James. All rights reserved.
 //
 
-#import "JMGenerateQRCodeViewController.h"
+#import "JMGenerateQRCodeVC.h"
 #import "JMGenerateQRCodeUtils.h"
 
-@interface JMGenerateQRCodeViewController ()
+@interface JMGenerateQRCodeVC ()
 
 @end
 
-@implementation JMGenerateQRCodeViewController
+@implementation JMGenerateQRCodeVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -56,7 +56,7 @@
                 break;
             case 2:
             {
-                image = [JMGenerateQRCodeUtils jm_generateColorQRCodeWithString:string imageSize:size rgbColor:[CIColor colorWithRed:200.0/255.0 green:70.0/255.0 blue:189.0/255.0] backgroundColor:[CIColor colorWithRed:1 green:1 blue:1]];
+                image = [JMGenerateQRCodeUtils jm_generateColorQRCodeWithString:string imageSize:size rgbColor:[CIColor colorWithRed:200.0/255.0 green:70.0/255.0 blue:189.0/255.0] backgroundColor:[CIColor colorWithRed:0 green:0 blue:0]];
                 originY += size.height + off;
             }
                 break;

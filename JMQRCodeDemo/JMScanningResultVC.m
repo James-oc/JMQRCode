@@ -1,19 +1,19 @@
 //
-//  JMScanningResultViewController.m
+//  JMScanningResultVC.m
 //  JMQRCodeDemo
 //
 //  Created by James.xiao on 2017/3/13.
 //  Copyright © 2017年 James. All rights reserved.
 //
 
-#import "JMScanningResultViewController.h"
+#import "JMScanningResultVC.h"
 #import <WebKit/WebKit.h>
 
-@interface JMScanningResultViewController ()
+@interface JMScanningResultVC ()
 
 @end
 
-@implementation JMScanningResultViewController
+@implementation JMScanningResultVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];

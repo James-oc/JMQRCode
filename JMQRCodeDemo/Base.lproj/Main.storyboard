@@ -30,7 +30,6 @@
                                 <state key="normal" title="生成二维码"/>
                                 <connections>
                                     <action selector="generateQRCode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="28I-lQ-MVf"/>
-                                    <action selector="scanQRCode:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zea-Ij-Smw"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znY-Ub-nwh">

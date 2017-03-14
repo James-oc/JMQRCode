@@ -1,5 +1,5 @@
 //
-//  JMScanningQRCodeViewController.h
+//  JMScanningQRCodeVC.h
 //  JMQRCodeDemo
 //
 //  Created by James.xiao on 2017/3/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JMScanningQRCodeViewController : UIViewController
+@interface JMScanningQRCodeVC : UIViewController
 
 @end

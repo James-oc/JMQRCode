@@ -41,9 +41,9 @@ const CGFloat jm_qr_scanLineOffY   = 2.0;
     if (self) {
         float width            = self.bounds.size.width - self.bounds.size.width * 0.15 * 2;
         self.transparentArea   = CGSizeMake(width, width);
-        _transparentOriginY    = self.bounds.size.height / 2 - self.transparentArea.height / 2;
+        self.transparentOriginY = self.bounds.size.height / 2 - self.transparentArea.height / 2;
 
-        _qrLineAnimateDuration = 0.01;
+        _qrLineAnimateDuration = 0.006;
         _qrLineImageName       = @"";
         _qrLineSize            = CGSizeMake(width - 20, 2);
         _qrLineColorRed        = 9 / 255.0;
@@ -93,15 +93,14 @@ const CGFloat jm_qr_scanLineOffY   = 2.0;
 
 #pragma mark - init
 - (void)initQRLine {
-    CGRect viewBounds = self.bounds;
-    
-    _qrLineImageView  = [[UIImageView alloc] initWithFrame:CGRectMake(viewBounds.size.width / 2 - _qrLineSize.width / 2, _transparentOriginY + jm_qr_scanLineOffY, _qrLineSize.width, _qrLineSize.height)];
+    _qrLineY = _transparentOriginY + jm_qr_scanLineOffY;
+
+    _qrLineImageView  = [[UIImageView alloc] initWithFrame:CGRectMake(self.bounds.size.width / 2 - _qrLineSize.width / 2, _qrLineY, _qrLineSize.width, _qrLineSize.height)];
     _qrLineImageView.backgroundColor = _qrLineColor;
     _qrLineImageView.image           = [UIImage imageNamed:_qrLineImageName];
+    _qrLineImageView.hidden          = true;
     
     [self addSubview:_qrLineImageView];
-    
-    _qrLineY = _qrLineImageView.frame.origin.y;
 }
 
 #pragma mark - Private
@@ -116,7 +115,7 @@ const CGFloat jm_qr_scanLineOffY   = 2.0;
                              _qrLineY = _transparentOriginY + jm_qr_scanLineOffY;
                          }
                          
-                         _qrLineY++ ;
+                         _qrLineY++;
                      }];
 }
 
@@ -312,7 +311,12 @@ const CGFloat jm_qr_scanLineOffY   = 2.0;
 #pragma mark - Properties
 - (void)setTransparentArea:(CGSize)transparentArea {
     _transparentArea    = transparentArea;
-    _scaMaxBorder = _transparentOriginY + (_transparentArea.height - jm_qr_scanLineOffY * 2);
+    _scaMaxBorder       = _transparentOriginY + (_transparentArea.height - jm_qr_scanLineOffY * 2);
+}
+
+- (void)setTransparentOriginY:(float)transparentOriginY {
+    _transparentOriginY = transparentOriginY;
+    _scaMaxBorder       = _transparentOriginY + (_transparentArea.height - jm_qr_scanLineOffY * 2);
 }
 
 - (void)setQrLineSize:(CGSize)qrLineSize {

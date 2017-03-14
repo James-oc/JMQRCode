@@ -1,5 +1,5 @@
 //
-//  JMScanningResultViewController.h
+//  JMScanningResultVC.h
 //  JMQRCodeDemo
 //
 //  Created by James.xiao on 2017/3/13.
@@ -13,7 +13,7 @@ typedef NS_ENUM(NSInteger ,JMScanningResultType) {
     barCode
 };
 
-@interface JMScanningResultViewController : UIViewController
+@interface JMScanningResultVC : UIViewController
 
 @property (nonatomic, assign) JMScanningResultType  resultType;
 @property (nonatomic, strong) NSString              *resultInfo;

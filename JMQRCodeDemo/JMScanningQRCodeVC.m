@@ -1,29 +1,33 @@
 //
-//  JMScanningQRCodeViewController.m
+//  JMScanningQRCodeVC.m
 //  JMQRCodeDemo
 //
 //  Created by James.xiao on 2017/3/13.
 //  Copyright © 2017年 James. All rights reserved.
 //
 
-#import "JMScanningQRCodeViewController.h"
+#import "JMScanningQRCodeVC.h"
 #import "JMScanningQRCodeView.h"
-#import "JMScanningResultViewController.h"
+#import "JMScanningResultVC.h"
 #import "JMScanningQRCodeUtils.h"
+#import "JMQRCodeLoadView.h"
 
-@interface JMScanningQRCodeViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface JMScanningQRCodeVC ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 {
-    JMScanningQRCodeView *_qrView;
-    UIButton             *_lightBtn;
-    BOOL                 _isOpenLight;
+    JMScanningQRCodeView        *_qrView;
+    UIButton                    *_lightBtn;
+    BOOL                        _isOpenLight;
+    JMQRCodeLoadView            *_loadView;
+    BOOL                        _firstLoad;
 }
 @end
 
-@implementation JMScanningQRCodeViewController
+@implementation JMScanningQRCodeVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _firstLoad = true;
     self.view.backgroundColor = [UIColor whiteColor];
     [self setupViews];
 }
@@ -35,12 +39,20 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [_qrView startRunning];
+    [self startRunning];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [_qrView stopRunning];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [self stopRunning];
 }
 
 - (void)setupViews {
@@ -52,7 +64,7 @@
     
     _qrView.backgroundColor    = [UIColor clearColor];
     
-    __weak JMScanningQRCodeViewController *weakVC = self;
+    __weak JMScanningQRCodeVC *weakVC = self;
     _qrView.scanningQRCodeResult   = ^(NSString *result) {
         NSLog(@"扫描结果：%@",result);
         JMScanningResultType type = barCode;
@@ -88,17 +100,48 @@
         forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:_lightBtn];
+    
+    [self setupLoadView];
+}
+
+- (void)setupLoadView {
+    if (!_loadView) {
+        _loadView                   = [[JMQRCodeLoadView alloc] initWithFrame:self.view.bounds];
+        _loadView.backgroundColor   = [UIColor blackColor];
+        
+        [self.view addSubview:_loadView];
+    }
 }
 
 - (void)setupRightBarButtonItem {
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"相册" style:(UIBarButtonItemStyleDone) target:self action:@selector(handleRightBarButtonAction)];
 }
 
+- (void)startRunning {
+    if (_firstLoad) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            _firstLoad       = false;
+            _loadView.hidden = true;
+            [_loadView.indicatorView stopAnimating];
+            [_loadView removeFromSuperview];
+
+            [_qrView startRunning];
+        });
+    }else {
+        [_qrView startRunning];
+    }
+}
+
+- (void)stopRunning {
+    [_qrView stopRunning];
+}
+
 - (void)pushVCWithType:(JMScanningResultType)type
                 result:(NSString *)result {
-    JMScanningResultViewController *resultVC = [[JMScanningResultViewController alloc] init];
+    JMScanningResultVC *resultVC    = [[JMScanningResultVC alloc] init];
+    resultVC.resultType             = type;
+    resultVC.resultInfo             = result;
     
-    resultVC.resultInfo = result;
     [self.navigationController pushViewController:resultVC animated:true];
 }
 
@@ -121,9 +164,9 @@
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     imagePicker.delegate = self;
-    [self presentViewController:imagePicker
-                       animated:YES
-                     completion:nil];
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:imagePicker
+                                                              animated:YES
+                                                            completion:nil];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
