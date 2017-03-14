@@ -112,11 +112,11 @@ const CGFloat jm_qr_scanLineOffY   = 2.0;
                          rect.origin.y          = _qrLineY;
                          _qrLineImageView.frame = rect;
                      } completion:^(BOOL finished) {
-                        if (_qrLineY > _scaMaxBorder) {
+                         if (_qrLineY > _scaMaxBorder) {
                              _qrLineY = _transparentOriginY + jm_qr_scanLineOffY;
                          }
                          
-                         _qrLineY++;
+                         _qrLineY++ ;
                      }];
 }
 
@@ -131,9 +131,10 @@ const CGFloat jm_qr_scanLineOffY   = 2.0;
     if (_isScanResult) {
         return;
     }
-    _isScanResult = YES;
     
     if (result != nil && ![result isEqualToString:@""]) {
+        _isScanResult = YES;
+
         // 处理扫描结果
         [self stopRunning];
         
@@ -304,10 +305,7 @@ const CGFloat jm_qr_scanLineOffY   = 2.0;
 {
     if (metadataObjects != nil && [metadataObjects count] > 0) {
         AVMetadataMachineReadableCodeObject *metadataObj = [metadataObjects objectAtIndex:0];
-
-        [self performSelectorOnMainThread:@selector(handleScanResult:)
-                               withObject:metadataObj.stringValue ? : @""
-                            waitUntilDone:NO];
+        [self handleScanResult:metadataObj.stringValue ? : @""];
     }
 }
 

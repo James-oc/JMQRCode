@@ -14,7 +14,7 @@
 @interface JMScanningQRCodeViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 {
     JMScanningQRCodeView *_qrView;
-    UIButton             *_lightbtn;
+    UIButton             *_lightBtn;
     BOOL                 _isOpenLight;
 }
 @end
@@ -55,7 +55,12 @@
     __weak JMScanningQRCodeViewController *weakVC = self;
     _qrView.scanningQRCodeResult   = ^(NSString *result) {
         NSLog(@"扫描结果：%@",result);
-        [weakVC pushVCWithType:qrCode
+        JMScanningResultType type = barCode;
+        if ([result hasPrefix:@"http"]) {
+            type = qrCode;
+        }
+        
+        [weakVC pushVCWithType:type
                         result:result];
     };
     
@@ -69,20 +74,20 @@
     
     [self.view addSubview:infoLabel];
     
-    _lightbtn       = [UIButton buttonWithType:UIButtonTypeSystem];
-    _lightbtn.frame = CGRectMake((CGRectGetWidth(self.view.frame) - 50) / 2,
+    _lightBtn       = [UIButton buttonWithType:UIButtonTypeSystem];
+    _lightBtn.frame = CGRectMake((CGRectGetWidth(self.view.frame) - 50) / 2,
                                  infoLabel.frame.origin.y + infoLabel.frame.size.height + 5,
                                  50,
                                  50);
-    [_lightbtn setTitleColor:[UIColor greenColor]
+    [_lightBtn setTitleColor:[UIColor greenColor]
                     forState:UIControlStateNormal];
-    [_lightbtn setTitle:@"开灯"
+    [_lightBtn setTitle:@"开灯"
                forState:UIControlStateNormal];
-    [_lightbtn addTarget:self
+    [_lightBtn addTarget:self
                   action:@selector(changeLightSwitch)
         forControlEvents:UIControlEventTouchUpInside];
     
-    [self.view addSubview:_lightbtn];
+    [self.view addSubview:_lightBtn];
 }
 
 - (void)setupRightBarButtonItem {
@@ -92,11 +97,7 @@
 - (void)pushVCWithType:(JMScanningResultType)type
                 result:(NSString *)result {
     JMScanningResultViewController *resultVC = [[JMScanningResultViewController alloc] init];
-    if ([result hasPrefix:@"http"]) {
-        resultVC.resultType = qrCode;
-    }else {
-        resultVC.resultType = barCode;
-    }
+    
     resultVC.resultInfo = result;
     [self.navigationController pushViewController:resultVC animated:true];
 }
@@ -105,10 +106,10 @@
 - (void)changeLightSwitch {
     _isOpenLight = !_isOpenLight;
     if (_isOpenLight) {
-        [_lightbtn setTitle:@"关灯"
+        [_lightBtn setTitle:@"关灯"
                    forState:UIControlStateNormal];
     }else {
-        [_lightbtn setTitle:@"开灯"
+        [_lightBtn setTitle:@"开灯"
                    forState:UIControlStateNormal];
     }
     
