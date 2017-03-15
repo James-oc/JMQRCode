@@ -44,6 +44,12 @@ qrView.scanningQRCodeResult   = ^(NSString *result) {
     NSLog(@"扫描结果：%@",result);
 };
 
+// 修改四个边角颜色
+[qrView qrCornerLineColorWithRed:<#red#>
+                           green:<#green#>
+                            blue:<#blue#>
+                           alpha:<#alpha#>];
+
 [self.view addSubview:_qrView];
 
 ```
