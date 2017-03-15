@@ -69,7 +69,7 @@ $ pod install
 
 ## 联系方式
 
-* 如在使用中, 遇到什么问题或有更好建议者, 请记得 [Issues me](https://github.com/James-swift/JMSQRCode/issues) 或 1007785739@qq.com 邮箱联系我
+* 如在使用中, 遇到什么问题或有更好建议者, 请记得 [Issues me](https://github.com/James-oc/JMQRCode/issues) 或 1007785739@qq.com 邮箱联系我
 
 ## 作者
 James.xiao
