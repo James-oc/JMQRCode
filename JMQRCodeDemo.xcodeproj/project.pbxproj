@@ -73,6 +73,7 @@
 		1A88848D1E752A7300D97EA4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1A8884F11E78207100D97EA4 /* JMQRCodeLoadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JMQRCodeLoadView.h; sourceTree = "<group>"; };
 		1A8884F21E78207100D97EA4 /* JMQRCodeLoadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JMQRCodeLoadView.m; sourceTree = "<group>"; };
+		1A8A731B1E79233700ECEB35 /* JMQRCode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JMQRCode.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +104,7 @@
 		1A3361FD1E783051006802E7 /* JMQRCode */ = {
 			isa = PBXGroup;
 			children = (
+				1A8A731B1E79233700ECEB35 /* JMQRCode.h */,
 				1A3361FE1E783051006802E7 /* JMGenerateQRCodeUtils.h */,
 				1A3361FF1E783051006802E7 /* JMGenerateQRCodeUtils.m */,
 				1A3362001E783051006802E7 /* JMScanningQRCodeUtils.h */,
