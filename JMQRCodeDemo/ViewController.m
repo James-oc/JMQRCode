@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "JMGenerateQRCodeVC.h"
 #import "JMScanningQRCodeVC.h"
-#import "JMScanningQRCodeUtils.h"
+#import "JMQRCode.h"
 
 @interface ViewController ()
 
