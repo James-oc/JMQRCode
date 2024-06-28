@@ -71,7 +71,7 @@ $ pod install
 ```
 
 ## 效果
-<img src="https://github.com/xiaobs/JMShareSource/raw/master/screenshots/OC/JMQRCode/1.PNG?raw=true"  height="480">  <img src="https://github.com/xiaobs/JMShareSource/raw/master/screenshots/OC/JMQRCode/2.PNG?raw=true"  height="480">
+<img src="https://github.com/James-oc/JMShareSource/raw/master/screenshots/OC/JMQRCode/1.PNG?raw=true"  height="480">  <img src="https://github.com/James-oc/JMShareSource/raw/master/screenshots/OC/JMQRCode/2.PNG?raw=true"  height="480">
 
 ## 联系方式
 
